@@ -7,16 +7,21 @@ class Sesion3 {
         // primera funcion, lo que hace es comprobar que un numero esta comprendido entre 1 y 6 y devuelve ese numero
         Scanner uno = new Scanner(System.in);
         num1 = uno.nextInt();
+        // lee el numero que le damos
         while (num1 < 0 || num1 > 6) {
+            // mientras el numero que pongamos no este comprendido entre 1 y 6:
             System.out.println("ese no se puede");
             System.out.println("Escriba un numero entre 1 y 6");
             num1 = uno.nextInt();
+            //te vuelve a pedir el numero
         }
         return num1;
+       // si el numero esta comprendido entre 1 y 6 lo devuelve
     }
 
     static int leerNumero(int n1, int n2) {
-        System.out.println("Escriba un numero entre "+ n1 + " y "+n2);
+        //hace lo mismo que la funcion menu pero esta
+        System.out.println("Escriba un numero entre " + n1 + " y " + n2);
         Scanner tres = new Scanner(System.in);
         int n3;
         n3 = tres.nextInt();
@@ -81,7 +86,7 @@ class Sesion3 {
                     System.out.println("Adios");
                     break;
                 case 1:
-                    int n1 = leerNumero(1,1000);
+                    int n1 = leerNumero(1, 1000);
                     if (esPrimo(n1) == true) {
                         System.out.println("el numero " + n1 + " es primo");
                     } else {
