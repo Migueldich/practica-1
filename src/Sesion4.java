@@ -15,7 +15,13 @@ public class Sesion4 {
 
     public static void mostrarSumasDePrimos(int n1) {
         n1=Sesion3.leerNumero(4, 1000);
-
+        int j=0;
+        for (int i = 2; i<n1; i++){
+            j= n1-i;
+            if (Sesion3.esPrimo(i) == true && Sesion3.esPrimo(j)== true && j!=1 && j>i){
+                System.out.println( i + " + " + j + " = " + n1);
+            }
+        }
 
     }
 
@@ -29,7 +35,6 @@ public class Sesion4 {
     }
 
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
         int n3 = 1;
         mostrarSumasDePrimos(n3);
         int n1 = Sesion3.leerNumero(-100, 100);;

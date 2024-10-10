@@ -33,10 +33,13 @@ class Sesion3 {
     }
 
     static boolean esPrimo(int num1) {
-        Scanner uno = new Scanner(System.in);
         boolean primo = true;
+        //se inicializa en true porque si falla, es cuando es falsa
+        // creo una variable de tipo booleano que me va a decir si un numero es primo
         for (int i = 2; i < num1; i++) {
+            //bucle que empieza desde dos y va aumentando hasta que es un valor menor (entero) que el numero que hemos puesto
             if (num1 % i == 0) {
+                //si divido el numero entre cualquier menor a este y el resto es cero, ya no es primo (omitiendo el 1)
                 primo = false;
                 return primo;
             }
