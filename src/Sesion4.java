@@ -29,21 +29,40 @@ public class Sesion4 {
                 System.out.println(i + " + " + j + " = " + n1);
             }
         }
+    }
 
+    private static boolean esPrimoRecursivo(int n1, int divisor) {
+        boolean resultado;
+        // empieza en true
+        if (n1/2 < divisor){
+            resultado = true;
+        }else if ((n1%divisor)==0){
+            return false;
+        }
+        else {
+            resultado = esPrimoRecursivo(n1, divisor + 1);
+        }
+
+        return resultado;
     }
 
     public static boolean esPrimoRecursivo(int n1) {
-        while (n1 != 0) {// hacer
-        }
-        n1 = 0;
-        return true;
-    }
+        int divisor = 1;
+        boolean resultado;
+        if (n1%divisor == 0) {
+            resultado = esPrimoRecursivo(n1, divisor + 1);
 
+        } else{
+            resultado = true;
+        }
+        if (n1 == 1){
+            resultado=false;
+        }
+        return resultado;
+    }
     public static double potencia(double base, double exponente) {
-        if (base == 0) {
-            //si la base es cero, la potencia siempre va a ser 0
-            return 0;
-        } else if (exponente == 0) {
+
+        if (exponente == 0) {
             // si el exponente es 0, la potencia siempre va a dar 1, ya que x^0=1
             return 1;
         } else if (exponente != 1) {
@@ -89,7 +108,14 @@ public class Sesion4 {
                     mostrarSumasDePrimos(n3);
                     break;
                 case 5:
-                    System.out.println("Comprobar si un numero es primo de manera recursiva");
+                    int n5= Sesion3.leerNumero(1, 1000);
+                   if ( esPrimoRecursivo(n5)== true){
+                       System.out.println( "El numero "+ n5 + " es primo.");
+                   }
+                   else{
+                       System.out.println("El numero "+ n5 + " no es primo.");
+                   }
+
                     break;
                 case 6:
                     System.out.println("Calcular potencia ");
